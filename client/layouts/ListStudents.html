@@ -1,0 +1,55 @@
+<template name="ListStudents">
+	{{#if recent}}<button class="added-btn">Student Added</button>{{/if}}
+	<table>
+		<tr>
+			<td>
+				<button class="sort-name">Name</button>
+				<div id="name-up" class="arrow-up hidden"></div>
+				<div id="name-down" class="arrow-down hidden"></div>
+			</td>
+			<td>
+				<button class="sort-phone">Phone</button>
+				<div id="phone-up" class="arrow-up hidden"></div>
+				<div id="phone-down" class="arrow-down hidden"></div>
+			</td>
+			<td>
+				<button class="sort-class">Class</button>
+				<div id="class-up" class="arrow-up hidden"></div>
+				<div id="class-down" class="arrow-down hidden"></div>
+			</td>
+			<td>
+				<button class="sort-city">City</button>
+				<div id="city-up" class="arrow-up hidden"></div>
+				<div id="city-down" class="arrow-down hidden"></div>
+			</td>
+		</tr>
+		{{#each student}}
+			<!-- <tr id="{{_id}}">
+				<td>{{name}}</td>
+				<td>{{phone}}</td>
+				<td>{{class}}</td>
+				<td>{{city}}</td>
+			</tr> -->
+
+			{{> Tr}}
+		{{/each}}
+	</table>	
+</template>
+
+<template name="Tr">
+	{{#if isRecentRow isRecent}}
+		<tr class="yellow">
+			<td>{{name}}</td>
+			<td>{{phone}}</td>
+			<td>{{class}}</td>
+			<td>{{city}}</td>
+		</tr>
+	{{else}}
+		<tr>
+			<td>{{name}}</td>
+			<td>{{phone}}</td>
+			<td>{{class}}</td>
+			<td>{{city}}</td>
+		</tr>
+	{{/if}}
+</template>

@@ -1,0 +1,14 @@
+<template name="HomeLayout">
+	<div class="container">
+		
+		<br/>
+		<h1>Welcome to Student Record System</h1>
+		<br />
+		{{> loginButtons}}
+
+		{{#if currentUser}}
+		<a href="/addstudent"><button>Add Student</button></a>
+		<a href="/liststudents"><button>List Students</button></a>
+		{{/if}}
+	</div>	
+</template>
